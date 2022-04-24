@@ -1,0 +1,41 @@
+.text1 {
+  color: rgb(87, 37, 37);
+  font-weight: 400;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.1px;
+  text-align: center;
+  font-size: 21px;
+  margin: 3%;
+}
+
+::ng-deep .nb-theme-default nb-card-header {
+  margin-top: 1% !important;
+  padding: 0 !important;
+}
+::ng-deep .nb-theme-default nb-card-b {
+  margin-top: 1% !important;
+  padding: 0 !important;
+}
+::ng-deep .nb-theme-default nb-alert {
+  border-color: #630f0f !important;
+}
+::ng-deep .nb-theme-default nb-card-body {
+  display: none;
+}
+::ng-deep .navigation .link nb-icon {
+  display: none !important;
+}
+
+::ng-deep .navigation {
+  background-color: #f7f9fc;
+  padding: 0.8rem;
+}
+::ng-deep .navigation :before {
+  margin: 0%;
+  padding: 0%;
+  color: #aaa;
+  font-weight: 200;
+  font-size: 13px;
+
+  content: "Réinitialiser mot de passe";
+}

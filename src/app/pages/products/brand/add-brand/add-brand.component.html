@@ -1,0 +1,52 @@
+<nb-card class="container col-md-9">
+    <nb-card-header style="font-weight: 600;
+    ">Ajouter une nouvelle marque
+
+    </nb-card-header>
+    <nb-card-body style="margin: 0;">
+        <form (ngSubmit)="addBrand()" #form="ngForm" aria-labelledby="title">
+            <div class="row d-flex justify-content-center" style="margin: 0;">
+                <div class="row d-flex justify-content-center" style="width: 60%;">
+                    <label for="brand_name" class="label" style="margin: 2%;"> Nom de marque </label>
+                    <input required #brand_name="ngModel" class="text-center " type="text" nbInput fullWidth
+                        name="brand_name" [(ngModel)]="brand.brand_name">
+                    <label *ngIf="brand_name.invalid && brand_name.touched">
+                        <p class="error-message al" *ngIf="brand_name.errors?.required">
+                            * champ obligatoire
+                        </p>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <br>
+                <br>
+                <div class="row  d-flex justify-content-center">
+                    <p class="error-message al" style="width: 100%;margin-left:5%" *ngIf="brand.brand_image==null">
+                        * champ obligatoire
+                    </p>
+                    <label for="file-input">
+                        <img id="previewImg" src="assets/images/upload.png" />
+                    </label>
+                    <input accept="image/png, image/gif, image/jpeg,image/webp" id="file-input" type="file"
+                        (change)="onselect($event)" style="display: none;" />
+                </div>
+                <div class="row  justify-content-md-center upload" style="position: relative;">
+                    <div class="col">
+                        <div class="upload-img  text-center " *ngIf="brand.brand_image!=null"> <img
+                                [src]="brand.brand_image" style="max-width: 80px;height:100%">
+                        </div>
+                    </div>
+                    <button *ngIf="brand.brand_image!=null" type="button" class="btn icon" (click)="resetImage()">
+                        <nb-icon type="button" icon="trash-outline"></nb-icon>
+                    </button>
+                </div>
+                <div class="row">
+                    <button type="submit" [disabled]="!form.valid || brand.brand_image==null"
+                        class="col btn add">Ajouter
+                        marque</button>
+                    <button type="button" class="col btn cancel" routerLink="../list-brands">Annuler</button>
+                </div>
+            </div>
+        </form>
+    </nb-card-body>
+</nb-card>

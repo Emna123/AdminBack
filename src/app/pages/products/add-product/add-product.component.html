@@ -1,0 +1,217 @@
+<nb-card>
+  <nb-card-header style="font-weight: 600;
+  ">Ajouter un nouveau produit
+  </nb-card-header>
+  <nb-card-body style="margin: 0;">
+    <nb-alert class="d-flex justify-content-center" *ngIf="error!=''" outline="danger" role="alert">
+      <p class="alert-title"><b>Erreur!</b></p>
+      <ul class="alert-message-list">
+        <li class="alert-message">{{ error }}</li>
+      </ul>
+    </nb-alert>
+    <form (ngSubmit)="addProduct()" #form="ngForm" aria-labelledby="title">
+      <div class="row" style="margin: 0;">
+        <div class="col">
+          <div class="row ">
+            <label for="productName" class="label">Libellé</label>
+            <input required #productName="ngModel" type="text" nbInput fullWidth name="productName"
+              [(ngModel)]="prod.productName">
+            <label *ngIf="productName.invalid && productName.touched">
+              <p class="error-message al" *ngIf="productName.errors?.required">
+                * champ obligatoire
+              </p>
+            </label>
+          </div>
+          <div class="row ">
+            <label for="price" class="label" style="width: 100%;">Prix</label>
+            <input class="col-10" type="number" required #price="ngModel" nbInput fullWidth name="price"
+              [(ngModel)]="prod.price">
+            <div class="col-2" style="margin-top:1%;font-size:13px;font-weight: bold;">(DT)</div>
+            <label *ngIf="price.invalid && price.touched">
+              <p class="error-message al" *ngIf="productName.errors?.required">
+                * champ obligatoire
+              </p>
+            </label>
+          </div>
+          <div class="row ">
+            <div class="col" style="padding: 0;">
+              <label for="quantity" class="label">Quantité totale</label>
+              <input type="number" required #quantity="ngModel" nbInput fullWidth name="quantity"
+                [(ngModel)]="prod.quantity">
+              <label *ngIf="quantity.invalid && quantity.touched">
+                <p class="error-message al" *ngIf="quantity.errors?.required">
+                  * champ obligatoire
+                </p>
+              </label>
+            </div>
+            <div class="col" style="padding: 0;padding-left: 1%;">
+              <label for="qnt_sold" class="label">Quantité vendue </label>
+              <input #qnt_sold="ngModel" required type="number" nbInput fullWidth name="qnt_sold"
+                [(ngModel)]="prod.qnt_sold">
+              <label *ngIf="qnt_sold.invalid && qnt_sold.touched">
+                <p class="error-message al" *ngIf="qnt_sold.errors?.required">
+                  * champ obligatoire
+                </p>
+              </label>
+            </div>
+          </div>
+          <div class="row " style="margin-bottom: 2%">
+            <label for="brand" class="label">Marque</label>
+            <nb-select hero class="border-select" name="brand" fullWidth [(selected)]="prod.brandid">
+              <nb-select-label>
+                {{prod.brandName}}
+              </nb-select-label>
+              <nb-option class="backcolor" (click)="getBrandName()" *ngFor="let brand of brands" [value]="brand.id">
+                {{brand.brand_name}}</nb-option>
+            </nb-select>
+          </div>
+          <a class="row al d-flex justify-content-center" routerLink="../brand/add-brand"
+            style="font-size: 20;font-weight:bold;margin:4%">
+            Ajouter une nouvelle marque?
+          </a>
+          <div class="row" style="padding: 0;">
+            <div class="col-md-8" style="padding: 0;">
+              <label for="category" class="label">Catégorie</label>
+              <nb-select class="border-select" hero fullWidth name="category" [(selected)]="prod.category">
+                <nb-select-label>
+                  {{ prod.category}}
+                </nb-select-label>
+                <nb-option class="backcolor" value="Accessoires">Accessoires</nb-option>
+                <nb-option class="backcolor" value="Chaussures">Chaussures</nb-option>
+                <nb-option class="backcolor" value="Vêtements">vêtements</nb-option>
+
+              </nb-select>
+            </div>
+            <div class="col-md-4" style="padding: 0;padding-left: 1%;">
+              <label for="inputLastName" class="label">Genre</label>
+              <nb-select hero class="border-select" name="gender" fullWidth [(selected)]="prod.gender">
+                <nb-select-label>
+                  {{ prod.gender }}
+                </nb-select-label>
+                <nb-option class="backcolor" value="Femme">Femme</nb-option>
+                <nb-option class="backcolor" value="Homme">Homme</nb-option>
+                <nb-option class="backcolor" value="Femme et Homme">Femme et Homme</nb-option>
+
+              </nb-select>
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="description" class="label">description</label>
+
+            <div class="car" style="width: 100%;">
+              <ngx-tiny-mce></ngx-tiny-mce>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <br>
+          <div class="row  d-flex justify-content-center">
+            <p class="error-message al" style="width: 100%;margin-left:5%" *ngIf="prod.prod_image.length==0">
+              * champ obligatoire
+            </p>
+            <label for="file-input">
+              <img id="previewImg" src="assets/images/upload.png" />
+            </label>
+            <label *ngIf="prod.prod_image==null">
+              <p class="error-message al" *ngIf="qnt_sold.errors?.required">
+                * champ obligatoire
+              </p>
+            </label>
+            <input id="file-input" type="file" accept="image/png, image/gif, image/jpeg,image/webp"
+              (change)="onselect($event)" multiple style="display: none;" />
+          </div>
+
+          <div class="row  justify-content-md-center upload" style="position: relative;">
+            <div *ngFor='let img of prod.prod_image' class="col">
+              <div class="upload-img  text-center "> <img [src]="img" style="max-width: 80px;">
+              </div>
+            </div>
+            <button *ngIf="prod.prod_image.length!=0" type="button" class="btn icon" (click)="resetImage()">
+              <nb-icon type="button" icon="trash-outline"></nb-icon>
+            </button>
+
+
+          </div>
+
+          <div class="row" style="padding: 0;padding-left: 1%;margin: 0.5%;">
+            <label for="inputLastName" class="label">Taille</label>
+            <ng-select class="custom" style="font-family: roboto" groupBy="type" [items]="getsizeListe()"
+              bindLabel="size" name="size" [multiple]="true" [(ngModel)]="prod.size" style="width:100%">
+            </ng-select>
+          </div>
+
+          <div class="custom-control custom-checkbox mb-3" style="margin: 2%;">
+            <input class="custom-control-input" id="new_prod" name="new_prod" [(ngModel)]="prod.new_prod"
+              type="checkbox" />
+
+            <label class="custom-control-label" for="new_prod">
+              <p class="text3"> Ajouter dans la liste nouvelle collection ?</p>
+
+            </label>
+
+          </div>
+          <div class="custom-control custom-checkbox mb-3" style="margin: 2%;">
+            <input class="custom-control-input" id="best_prod" name="best_prod" [(ngModel)]="prod.best_prod"
+              type="checkbox" />
+
+            <label class="custom-control-label" for="best_prod">
+              <p class="text3"> Ajouter dans la liste meilleur produits ?</p>
+
+            </label>
+
+          </div>
+          <div class="custom-control custom-checkbox mb-3" style="margin: 2%;">
+            <input class="custom-control-input" id="Bestsell" name="Bestsell" [(ngModel)]="prod.Bestsell"
+              type="checkbox" />
+
+            <label class="custom-control-label" for="Bestsell">
+              <p class="text3">Ajouter dans la liste meilleures ventes ?</p>
+
+            </label>
+
+          </div>
+          <div class="custom-control custom-checkbox mb-3" style="margin: 2%;">
+            <input class="custom-control-input" id="promo" (click)="checkPromo()" name="promo" [(ngModel)]="promo"
+              type="checkbox" />
+
+            <label class="custom-control-label" for="promo">
+              <p class="text3"> Ajouter dans la liste produits en promotions ?</p>
+
+            </label>
+
+          </div>
+          <div class="row" *ngIf="promo==true" style="margin: 1%;">
+            <div class="col-md-4" style="margin: 2%;">
+              <label for="old_price" class="label">Prix avant promotion</label>
+              <div class="row">
+                <input class="col-8" type="number" nbInput fullWidth name="old_price" [(ngModel)]="prod.old_price">
+                <div class="col-2" style="margin-top:4%;font-size:13px;font-weight: bold;">(DT)</div>
+              </div>
+            </div>
+            <div class="col-md-7" style="margin: 2%;">
+              <label for="old_price" class="label">Période d'expiration de la promotion</label>
+
+              <nb-select hero class="border-select " name="gender" fullWidth [(selected)]="prod.exp_period">
+                <nb-select-label>
+                  {{ prod.exp_periodTitle }}
+                </nb-select-label>
+                <nb-option (click)="getPeriod()" *ngFor="let period of periodList" class="backcolor"
+                  [value]="period.value">{{period.title}}</nb-option>
+
+
+
+              </nb-select>
+            </div>
+          </div>
+          <div class="row">
+            <button type="submit" [disabled]="!form.valid || prod.prod_image.length==0" class="col btn add">Ajouter
+              produit</button>
+            <button type="button" class="col btn cancel" routerLink="../list-products">Annuler</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

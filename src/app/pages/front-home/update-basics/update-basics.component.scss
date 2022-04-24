@@ -1,0 +1,365 @@
+@import "~@ng-select/ng-select/themes/material.theme.css"; 
+
+
+  ::ng-deep  nb-select-label  {
+    font-size: 12px !important;
+    color:black !important;
+    border-color: #3d0b0b!important;
+   }
+
+
+
+.border-select{
+    border: 1px solid #e5eeff !important;   
+    border-radius: 5%; 
+}
+
+.backcolor:focus{
+    background-color: #3d0b0b !important;
+    color: white!important;  
+}
+.backcolor:hover{
+    background-color: #edf0f3!important;
+    color: black !important;
+}
+.backcolor{
+    background-color: white!important;
+    color: black!important;  
+}
+   
+.c{
+    font-size: 10px!important;
+}
+
+  ::ng-deep  nb-option  {
+    font-weight: 100  !important;
+    font-size: 13px !important;
+    color: black !important; 
+background-color: white;
+}
+
+  
+
+.label {
+    color: black;
+    font-weight: 600;
+    margin-top: 1%;
+}
+.row{
+    margin-top: 2%;
+}
+
+
+/* toolbar */
+::ng-deep .mce-menubar {
+    background-color: #f7f9fc !important; /* uses !important or override .mce-panel background-color/image */
+
+}
+::ng-deep .mce-toolbar-grp {
+    background-color: #f7f9fc !important; /* uses !important or override .mce-panel background-color/image */
+
+}
+::ng-deep .mce-tinymce{
+    border-color:#e5eeff !important; /* uses !important or override .mce-panel background-color/image */
+    background-color:#f7f9fc ;
+
+}
+::ng-deep .mce-container{
+    border-color:#e5eeff !important; /* uses !important or override .mce-panel background-color/image */
+    background-color:#f7f9fc !important;  
+
+}
+::ng-deep  .mce-btn{
+    background-color:#f7f9fc !important;  ;
+
+}
+::ng-deep  .mce-btn:hover{
+    border-color:#e8ecee  !important;  
+
+}
+::ng-deep  .mce-btn:focus{
+    border-color:#e8ecee  !important;  ;
+
+}
+input{
+    font-weight: 100  !important;
+    font-size: 13px !important;
+    color: black !important; }
+input:focus
+{
+    border-color:#e5eeff  !important;
+    
+}
+::ng-deep  .mce-menu-item:hover{
+
+    background-color: #3d0b0b !important;  
+
+}
+::ng-deep  .mce-menu-item:focus{
+
+    background-color: #3d0b0b !important;  
+
+}
+::ng-deep  .mce-menu-item.mce-selected{
+
+    background-color: #3d0b0b !important;  
+
+}
+::ng-deep  .mce-table_appearance_options {
+
+    border: 2px solid green !important;   
+    background-color: #3d0b0b !important;  
+
+}
+.upload{
+    border: 2px dashed rgba(202, 202, 202, 0.904)   !important; 
+    min-height: 100px;
+    margin: 3%;
+    padding: 1%;
+  
+}
+.upload-img {
+    border: 2px solid rgba(202, 202, 202, 0.904)   !important; 
+    margin: 1%;
+}
+.upload-img:hover {
+    border: 2px solid #3d0b0b !important; 
+    margin: 1%;
+  
+}
+#previewImg
+{
+    border: 2px dashed rgba(202, 202, 202, 0.904)   !important; 
+
+}
+#previewImg:hover
+{
+    border: 2px dashed #3d0b0b !important; 
+ 
+}
+
+
+
+
+
+::ng-deep .ng-select.custom .ng-select-container  {            
+    border-color:#e8ecee  !important;  ;
+    background-color: #f4f8fae0 !important;  
+    height: 42px;
+
+}
+::ng-deep .ng-select.custom .ng-select-container:hover  {            
+    background-color: #fffefe  !important;  
+
+
+}
+
+::ng-deep .ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border-color:#e8ecee  !important;  
+    box-shadow: none !important;
+}
+
+
+  ::ng-deep .ng-option-label{
+    font-weight: 100  !important;
+    font-size: 13px !important;
+    color: black !important; 
+    border-color:#e8ecee  !important;  
+
+  }
+
+  ::ng-deep .ng-option:focus{
+    background-color: #3d0b0b !important;
+    color: white!important;  
+}
+::ng-deep .ng-option:hover{
+    background-color: #edf0f3!important;
+    color: black !important;
+}
+
+
+::ng-deep .ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-value
+{
+    font-weight: 600  !important;
+    font-size: 13px !important;
+    color: black !important; 
+    border-color:#e8ecee  !important;  
+    background-color: white!important;
+
+}
+::ng-deep .ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-value
+  .ng-value-icon:hover {
+  background-color: #3d0b0b !important;
+  color: white!important;
+  border-radius: 10% !important;
+  border-color: #3d0b0b !important;
+}
+::ng-deep .ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-value
+  .ng-value-icon {
+
+  border-color: #3d0b0b !important;
+}
+
+
+
+
+::ng-deep   .ng-option.ng-option-marked {
+    background-color: #edf0f3!important;
+
+}
+::ng-deep   .ng-option.ng-option-selected {
+    background-color: #3d0b0b !important;
+    .ng-option-label{
+        color: white !important;  
+
+    
+      }
+    
+}
+/*
+::ng-deep .ng-select.ng-select-multiple
+  .ng-select-container
+
+   {
+
+    background-color: #3d0b0b !important;
+}*/
+::ng-deep nb-checkbox:checked:before{
+    background-color:green;
+    }
+
+    .custom-control-input:checked~.custom-control-label::before {
+        border-color: #3d0b0b  !important;
+        background-color: #3d0b0b  !important;
+        box-shadow: none !important;
+
+      }
+      
+  
+       
+      .custom-control-input:active~.custom-control-label::before {
+        background-color: #3d0b0b  !important;
+        border-color: #3d0b0b  !important;
+        box-shadow: none !important;
+
+      }
+      .custom-control-input:focus:not(:checked)~.custom-control-label::before {
+        border-color: #3d0b0b  !important;
+        box-shadow: none !important;
+
+      }
+      .text3{
+        color:#424949 !important ;
+        font-size: 13px !important;
+        margin-top: 1%;
+
+      }
+
+      .add{
+          background-color: #3d0b0b;
+          border-color: #3d0b0b;
+          color: white;
+          width: 35%;
+          margin: 2%;
+      }
+      .add:focus{
+        background-color: #3d0b0bda;
+        border-color: #3d0b0b;
+        box-shadow: none !important;
+    
+
+    }
+    .add:hover{
+        background-color: #3d0b0bda;
+        border-color: #3d0b0b;
+        box-shadow: none !important;
+    }
+
+    .cancel{
+        background: linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+        border-color:  linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+        color: white;
+        width: 25%;
+        margin: 2%;
+
+    }
+    .cancel:focus{
+      background-color:  linear-gradient(-30deg, #7d8183  50%, #a9aaaa  50%);
+      border-color:  linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+      opacity: 0.8;
+      box-shadow: none !important;
+  
+
+  }
+  .cancel:hover{
+    background-color:  linear-gradient(-30deg, #7d8183  50%, #a9aaaa  50%);
+    border-color:  linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+      box-shadow: none !important;
+      opacity: 0.8;
+
+  }
+  .al{ color: #7e0a1cc9;   
+    font-weight: 300;
+    font-size: 12px;
+    text-decoration: none;
+       }
+.al:hover{
+    color: #7e0a1b77;  
+       }
+ .icon{
+    position: absolute;
+    bottom: 0px; right: 0px;
+    background-color: #3d0b12c9;  
+    color:white ;
+    margin: 1%;
+    padding: 1%;
+    }
+.icon:focus{
+        background-color: #3d0b0bda;
+        border-color: #3d0b0b;
+        box-shadow: none !important;
+    
+
+    }
+.icon:hover{
+        background-color: #3d0b0bda;
+        border-color: #3d0b0b;
+        box-shadow: none !important;
+    }
+
+
+    ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup{
+        background-color: #3d0b0b5d!important;
+      }
+      #toast-container>.toast {
+       background-color: #3d0b0b!important;
+        }
+        nb-alert {
+            border-color: #3d0b0b;
+            max-width: 50%;
+            .alert-message {
+              margin: 0 0 0.5rem;
+              color:black  ;
+              font-size: 14px;
+              margin-top: 1%;
+              margin-bottom: 1%;
+              font-weight: 100;
+              font-family: 'Yu Gothic UI';
+              letter-spacing: 0.1px;
+            }
+            .alert-message-list {
+         
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+            }
+          }   

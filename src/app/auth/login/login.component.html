@@ -1,0 +1,75 @@
+<div class="w-100 d-inline-block" style="font-weight: lighter">
+  <p class="w-100 d-inline-block p textd">Connectez-vous à votre compte </p>
+  <div class="divd1  ">
+    <br>
+    <nb-alert *ngIf="error!=''" outline="danger" role="alert">
+      <p class="alert-title"><b>Erreur!</b></p>
+      <ul class="alert-message-list">
+        <li class="alert-message">{{ error }}</li>
+      </ul>
+    </nb-alert>
+    <form (ngSubmit)="login()" #form="ngForm" aria-labelledby="title">
+      <div class="row">
+        <p class="text2 col-md-4 " style="margin-top: 1%;">E-mail</p>
+        <div class="col-md-6">
+          <input name="Email" style="    border-radius: 0%; font-size: 13px;      font-weight: 100;" type="email"
+            nbInput required fullWidth [(ngModel)]="manager.Email" #email="ngModel" name="email" id="input-email"
+            pattern=".+@.+\..+" [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
+            [attr.aria-invalid]="email.invalid && email.touched ? true : null">
+
+          <label *ngIf="email.invalid && email.touched">
+            <p class="error-message" *ngIf="email.errors?.required">
+              Veuillez saisir votre e-mail.
+            </p>
+            <p class="error-message" *ngIf="email.errors?.pattern">
+              É-mail invalide, veuillez réessayer.
+            </p>
+          </label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <p class="text2 col-md-4 " style="margin-top: 1%;">Mot de passe</p>
+        <div class="col-md-6" style="display: flex;">
+
+          <input nbInput required fullWidth [(ngModel)]="manager.Password" #password="ngModel" name="password"
+            [type]="type" id="input-password" style="border-radius: 0%; font-size: 13px;      font-weight: 100;"
+            [status]="password.dirty ? (password.invalid  ? 'danger' : 'success') : ''"
+            [attr.aria-invalid]="password.invalid && password.touched ? true : null">
+
+          <button (click)="calt()" type="button" class="but col-1 btn " style="float: right;">
+            <p
+              style="color:white;font-weight:400; font-family: 'Yu Gothic UI';opacity:0.9;margin:0;padding:0;font-size:0.8rem">
+              {{ntype}}</p>
+          </button>
+        </div>
+        <div class="col-md-4"></div>
+        <label class="col-md-6" *ngIf="password.invalid && password.touched ">
+          <p class="error-message" *ngIf="password.errors?.required">
+            Veuillez saisir votre mot de passe.
+          </p>
+
+        </label>
+      </div>
+      <div class="text1" style="text-align: center;"><a class="al" routerLink="../request-password">
+          Mot de passe oublié ?</a>
+      </div>
+
+      <div class="row">
+        <button nbButton [disabled]="!form.valid" fullWidth status="success" [disabled]="submitted || !form.valid"
+          [class.btn-pulse]="submitted" type="submit" class="col al animated-button1"
+          style="border: none;border-radius:0;padding:2.5%">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <p
+            style="color:white;font-weight:400; font-family: 'Yu Gothic UI';opacity:0.82;margin:0;padding:0;font-size:0.8rem">
+            Se Connecter </p>
+        </button>
+      </div>
+      <hr>
+
+    </form>
+  </div>
+  <div>

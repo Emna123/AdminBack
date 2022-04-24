@@ -1,0 +1,101 @@
+<nb-card>
+  <nb-card-header style="font-weight: 600;
+    ">Modifier les éléments de base
+  </nb-card-header>
+
+  <nb-card-body style="margin: 0;">
+
+    <nb-alert class="d-flex justify-content-center" *ngIf="error!=''" outline="danger" role="alert">
+      <p class="alert-title"><b>Erreur!</b></p>
+      <ul class="alert-message-list">
+        <li class="alert-message">{{ error }}</li>
+      </ul>
+    </nb-alert>
+    <form (ngSubmit)="update()" #form="ngForm" aria-labelledby="title">
+      <div class="row" style="margin: 0;">
+        <div class="col">
+          <div class="row ">
+            <label for="animated_text" class="label">Texte animé</label>
+            <input required #animated_text="ngModel" type="text" nbInput fullWidth name="animated_text"
+              [(ngModel)]="front.animated_text">
+            <label *ngIf="animated_text.invalid && animated_text.touched">
+              <p class="error-message al" *ngIf="animated_text.errors?.required">
+                * champ obligatoire
+              </p>
+            </label>
+          </div>
+
+
+          <div class="row">
+            <label for="historical_text" class="label">Texte historique</label>
+
+            <div class="car" style="width: 100%;">
+              <ngx-tiny-mce></ngx-tiny-mce>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <br>
+          <!--Upload Femme Collection image-->
+          <div class="row">
+            <div class="col">
+              <div class="row  d-flex justify-content-center">
+                <label for="femmeCollection_image" class="label">Collection femme image</label>
+
+                <label for="file-input1">
+                  <img id="previewImg" src="assets/images/upload.png" />
+                </label>
+
+                <input id="file-input1" accept="image/png, image/gif, image/jpeg,image/webp" type="file" (change)="onselect($event,1)" style="display: none;" />
+              </div>
+
+              <div class="row  justify-content-md-center upload" style="position: relative;">
+                <div class="col">
+                  <div class="upload-img  text-center " *ngIf="front.femmeCollection_image!=null"> <img
+                      [src]="front.femmeCollection_image" style="max-width: 100%;height:100px">
+                  </div>
+                </div>
+                <button *ngIf="front.femmeCollection_image!=null" type="button" class="btn icon"
+                  (click)="resetImage1()">
+                  <nb-icon type="button" icon="trash-outline"></nb-icon>
+                </button>
+              </div>
+            </div>
+            <!--Upload Homme Collection image-->
+            <div class="col">
+              <div class="row  d-flex justify-content-center">
+                <label for="hommeCollection_image" class="label">Collection Homme image</label>
+
+                <label for="file-input">
+                  <img id="previewImg" src="assets/images/upload.png" />
+                </label>
+
+                <input id="file-input" type="file" (change)="onselect($event,2)" style="display: none;" />
+              </div>
+
+              <div class="row  justify-content-md-center upload" style="position: relative;">
+                <div class="col">
+                  <div class="upload-img  text-center " *ngIf="front.hommeCollection_image!=null"> <img
+                      [src]="front.hommeCollection_image" style="max-width: 100%;height:100px">
+                  </div>
+                </div>
+                <button *ngIf="front.hommeCollection_image!=null" type="button" class="btn icon"
+                  (click)="resetImage2()">
+                  <nb-icon type="button" icon="trash-outline"></nb-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <button type="submit"
+              [disabled]="!form.valid || front.femmeCollection_image==null||front.hommeCollection_image==null"
+              class="col btn add">Sauvegarder les modifications</button>
+            <button type="button" class="col btn cancel" routerLink="../update">Annuler</button>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

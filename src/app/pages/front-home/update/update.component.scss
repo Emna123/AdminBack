@@ -1,0 +1,48 @@
+.add{
+    background-color: #3d0b0b;
+    border-color: #3d0b0b;
+    color: white;
+    width: 80%;
+    margin: 2%;
+}
+.add:focus{
+  background-color: #3d0b0bda;
+  border-color: #3d0b0b;
+  box-shadow: none !important;
+
+
+}
+.add:hover{
+  background-color: #3d0b0bda;
+  border-color: #3d0b0b;
+  box-shadow: none !important;
+}
+
+.cancel{
+    background: linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+    border-color:  linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+    color: black;
+    vertical-align: middle;
+    width: 80%;
+    margin: 5%;
+
+}
+.cancel:focus{
+  background-color:  linear-gradient(-30deg, #7d8183  50%, #a9aaaa  50%);
+  border-color:  linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+  opacity: 0.8;
+  box-shadow: none !important;
+
+
+}
+.cancel:hover{
+background-color:  linear-gradient(-30deg, #7d8183  50%, #a9aaaa  50%);
+border-color:  linear-gradient(-30deg, #D0D3D4  50%, #D0D3D4  50%);
+  box-shadow: none !important;
+  opacity: 0.8;
+
+}
+img{
+    border: 2px dashed rgba(202, 202, 202, 0.904)   !important; 
+    padding: 0.5%;
+}

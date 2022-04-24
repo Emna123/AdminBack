@@ -1,0 +1,184 @@
+@import "../../../@theme/styles/themes";
+
+@include nb-install-component() {
+  nb-card {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+:host
+  /deep/
+  ng2-smart-table
+  thead
+  tr.ng2-smart-filters
+  th.ng2-smart-th
+  ng2-smart-table-filter
+  div.ng2-smart-filter
+  default-table-filter
+  input-filter
+  input::placeholder {
+  background-image: url("https://www.w3schools.com/css/searchicon.png");
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: left center;
+  outline: 0;
+  color: transparent !important;
+}
+///
+:host
+  /deep/
+  ng2-smart-table
+  thead
+  tr.ng2-smart-filters
+  th.ng2-smart-th
+  ng2-smart-table-filter
+  div.ng2-smart-filter
+  default-table-filter
+  input-filter
+  input:focus {
+  box-shadow: none !important;
+  border-color: #3d0b0b !important;
+}
+//@at-root:host /deep/ ng2-smart-table thead
+:host
+  /deep/
+  ng2-smart-table
+  thead
+  tr.ng2-smart-filters
+  th.ng2-smart-th
+  ng2-smart-table-filter
+  div.ng2-smart-filter
+  default-table-filter
+  input-filter
+  input {
+  font-size: 13px !important;
+}
+
+:host /deep/ ng2-smart-table thead > tr > th > a.ng2-smart-action {
+  display: none !important;
+}
+/*
+:host /deep/ ng2-st-tbody-edit-delete { 
+  display: none!important;
+ 
+}*/
+:host ::ng-deep {
+  input-editor input {
+    font-size: 13px !important;
+  }
+}
+
+:host ::ng-deep {
+  input-editor input:focus {
+    box-shadow: none !important;
+    border-color: #3d0b0b !important;
+  }
+  /*  select-editor select {
+  width: 5em;
+  margin-left: 1em;
+  }*/
+}
+
+//:host /deep/ ng2-smart-table tbody > tr:first-child > td:nth-child(2) {
+:host /deep/ ng2-smart-table .ng2-smart-actions a.ng2-smart-action:hover {
+  color: #831818 !important;
+}
+/* :host /deep/ ng2-smart-table .ng2-smart-actions a.ng2-smart-action {
+    height: 0px;
+    margin-top: 50%;
+  }*/
+:host /deep/ ng2-st-tbody-edit-delete {
+  display: flex !important;
+  height: 0 !important;
+}
+
+:host /deep/ ng2-st-tbody-custom a.ng2-smart-action.ng2-smart-action-custom-custom {
+  display: inline-block 0 !important;
+  height: 0 !important;
+  text-align: center !important;
+}
+
+nb-alert {
+  border-color: #3d0b0b;
+  max-width: 50%;
+  .alert-message {
+    margin: 0 0 0.5rem;
+    color: black;
+    font-size: 14px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-weight: 100;
+    font-family: "Yu Gothic UI";
+    letter-spacing: 0.1px;
+  }
+  .alert-message-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+:host /deep/ ng2-smart-table tbody > tr > td {
+  font-size: 13px;
+  text-align: center;
+}
+:host /deep/ ng2-smart-table thead > tr > th {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+:host /deep/ ng2-smart-table-title > a {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+.add {
+  background-color: #3d0b0b;
+  border-color: #3d0b0b;
+  color: white;
+  font-size: 15px;
+}
+.add:focus {
+  background-color: #3d0b0bda;
+  border-color: #3d0b0b;
+  box-shadow: none !important;
+}
+.add:hover {
+  background-color: #3d0b0bda;
+  border-color: #3d0b0b;
+  box-shadow: none !important;
+}
+::ng-deep nb-checkbox:checked:before {
+  background-color: green;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #3d0b0b !important;
+  background-color: #3d0b0b !important;
+  box-shadow: none !important;
+}
+
+.custom-control-input:active ~ .custom-control-label::before {
+  background-color: #3d0b0b !important;
+  border-color: #3d0b0b !important;
+  box-shadow: none !important;
+}
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: #3d0b0b !important;
+  box-shadow: none !important;
+}
+::ng-deep span.ng2-smart-page-link.page-link {
+  background-color: #3d0b0b !important;
+  color: white;
+}
+:host /deep/ a.ng2-smart-page-link.page-link.page-link-next {
+  display: none !important;
+}
+:host /deep/ a.ng2-smart-page-link.page-link.page-link-prev {
+  display: none !important;
+}
+:host /deep/ a.ng2-smart-page-link.page-link {
+  color: black !important;
+}
+:host /deep/ a.ng2-smart-page-link.page-link:hover {
+  color: #801515c7 !important;
+}

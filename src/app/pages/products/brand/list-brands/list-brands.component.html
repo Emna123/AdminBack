@@ -1,0 +1,23 @@
+<nb-card>
+    <nb-card-header>
+      <button nbButton class="add btn" routerLink="../add-brand"> <i class="nb-plus"></i>
+      </button>    
+    </nb-card-header>
+    <nb-card-body>
+      <nb-alert class="d-flex justify-content-center" *ngIf="errors.length!=0" outline="danger" role="alert">
+        <p class="alert-title"><b>Erreur!</b></p>
+        <ul class="alert-message-list">
+          <li class="alert-message" *ngFor="let error of errors">{{ error }}</li>
+        </ul>
+      </nb-alert>
+      <ng2-smart-table
+      [settings]="settings" 
+      [source]="brands" 
+      (editConfirm)="updateRecord($event)"
+      (deleteConfirm)="onDeleteConfirm($event)"
+      (custom)="onCustom($event)"
+      >
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
+  

@@ -1,0 +1,41 @@
+@import "../@theme/styles/themes";
+
+@include nb-install-component() {
+  ::ng-deep router-outlet + * {
+    display: block;
+    animation: fade 1s;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  ::ng-deep nb-menu {
+    .menu-item {
+      a:hover {
+        color: #3d0b0b !important;
+        .menu-icon {
+          color: #3d0b0b !important;
+        }
+      }
+      a:focus {
+        color: #3d0b0b !important;
+        .menu-icon {
+          color: #3d0b0b !important;
+        }
+      }
+      a.active {
+        color: #3d0b0b !important;
+
+        .menu-icon {
+          color: #3d0b0b !important;
+        }
+      }
+    }
+  }
+}
